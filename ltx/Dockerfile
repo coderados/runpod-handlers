@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -r
 
 RUN pip install --no-cache-dir \
     "diffusers>=0.37.0" \
-    "transformers>=4.51.0" accelerate safetensors sentencepiece \
+    "transformers>=4.51.0,<5" accelerate safetensors sentencepiece \
     "imageio[ffmpeg]" pillow requests runpod soundfile
 
 COPY handler.py /handler.py
